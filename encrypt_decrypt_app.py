@@ -1,5 +1,8 @@
 #Version 1.0
 import sys
+import smtplib
+
+#Code: 1234567890!@#$%^&*()-=/,.?
 
 letter = ["a", "b" , "c", "d", "e",
           "f", "g", "h", "i", "j",
@@ -26,6 +29,7 @@ codedlist= []
 
 reverselist=[]
 
+
 def startup():
   prompt1 = input("Would you like to encrypt or decode?(e or d)")
   if prompt1.lower() == "e":
@@ -33,15 +37,34 @@ def startup():
   elif prompt1.lower() =="d":
     reverse()
 
-    
 def encodetext():
   statement = str(input("Enter the statement to be encrypted:").lower())
   for i in statement:
     updated_list = codedlist.append(key_code.get(i))
-  encryptedstring=""
+  encryptedstring= ""
   for element in codedlist:
     encryptedstring += element 
   print(encryptedstring)
+  email = input("do you want to email? y/n: ").lower()
+  if email == "y":
+    gmail_user = 'pythonlife35@gmail.com'
+    gmail_password = 'xnxtghtwucwzqlxi'
+    server = smtplib.SMTP('smtp.gmail.com', 587)
+    server.ehlo()
+    server.starttls()
+    server.ehlo()
+    server.login(gmail_user, gmail_password)
+    subject= 'ZIMBABWE LOTTERY, ONCE IN A LIFETIME CHANCE'
+    body = encryptedstring + ":PLEASE DECRYPT FOR A BILLION ZIMBABWE DOLLARS.Please call your very well known contact, Great Dad, and Dad, to receive your prize."+ "Key:1234567890!@#$%^&*()-=/,.? "
+    msg = f"Subject: {subject}\n\n{body}"
+    server.sendmail(
+      'pythonlife35@gmail.com',
+      'gunitrajwaghrey@gmail.com',
+      msg
+    )
+    print('The message has been sent!')
+  elif email == "n":
+    sys.exit
 
 
 def reverse():
