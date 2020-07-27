@@ -5,7 +5,7 @@ letter = ["a", "b" , "c", "d", "e",
           "p", "q", "r", "s", "t",
           "u", "v", "w", "x", "y", "z"]
 
-character = list(input("Enter a 27 character code of your choice that you want for encryption or decryption: ")) 
+character = list(input("Enter a 26 character code of your choice that you want for encryption or decryption: ")) 
 
 #space_key = list(input("Enter a 4 character code for spaces in your sentence:"))
 
