@@ -2,7 +2,6 @@
 import sys
 import smtplib
 
-#Code: 1234567890!@#$%^&*()-=/,.?
 
 letter = ["a", "b" , "c", "d", "e",
           "f", "g", "h", "i", "j",
