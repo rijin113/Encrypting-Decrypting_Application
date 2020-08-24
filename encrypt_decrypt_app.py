@@ -47,19 +47,19 @@ def encodetext():
   print(encryptedstring)
   email = input("do you want to email? y/n: ").lower()
   if email == "y":
-    gmail_user = 'pythonlife35@gmail.com'
-    gmail_password = 'xnxtghtwucwzqlxi'
-    server = smtplib.SMTP('smtp.gmail.com', 587)
+    gmail_user = '#'
+    gmail_password = '#'
+    server = smtplib.SMTP('smtp.gmail.com', ###)
     server.ehlo()
     server.starttls()
     server.ehlo()
     server.login(gmail_user, gmail_password)
-    subject= 'ZIMBABWE LOTTERY, ONCE IN A LIFETIME CHANCE'
-    body = encryptedstring + ":PLEASE DECRYPT FOR A BILLION ZIMBABWE DOLLARS.Please call your very well known contact, Great Dad, and Dad, to receive your prize."+ "Key:1234567890!@#$%^&*()-=/,.? "
+    subject= 'TEXT'
+    body = encryptedstring + "###"+ "#### "
     msg = f"Subject: {subject}\n\n{body}"
     server.sendmail(
-      'pythonlife35@gmail.com',
-      'gunitrajwaghrey@gmail.com',
+      'your email',
+      'their email',
       msg
     )
     print('The message has been sent!')
