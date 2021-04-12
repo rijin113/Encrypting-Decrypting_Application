@@ -1,8 +1,6 @@
 #Version 1.0
 import sys
 import smtplib
-
-
 letter = ["a", "b" , "c", "d", "e",
           "f", "g", "h", "i", "j",
           "k", "l", "m", "n", "o",
@@ -18,7 +16,6 @@ if len(character) < 26:
 elif len(character) > 26:
   print("excess characters")
   sys.exit
-  
 
 key_code = {key:value for key, value in zip(letter, character)}
 
@@ -64,8 +61,7 @@ def encodetext():
     print('The message has been sent!')
   elif email == "n":
     sys.exit
-
-
+                          
 def reverse():
   statement2 = str(input("Enter the statement to be decrypted:").lower())
   for i in statement2:
